@@ -1,0 +1,60 @@
+<html>
+  <head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <script type="text/javascript">
+    google.charts.load("current", {packages:["timeline"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+
+    var container = document.getElementById('haha');
+    var chart = new google.visualization.Timeline(container);
+    var dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'Position' });
+    dataTable.addColumn({ type: 'string', id: 'Name' });
+	dataTable.addColumn({ type: 'string', id: 'Details', role: 'tooltip' });
+    dataTable.addColumn({ type: 'date', id: 'Start' });
+    dataTable.addColumn({ type: 'date', id: 'End' });
+	// 注意月份是从0到11。
+    dataTable.addRows([
+	  [ 'All', 'Bootcamp', '第一次组会', new Date(2018, 8, 18), new Date(2018, 8, 18) ],
+	  [ '设计组', '确认并定义设计风格', '确认设计需求；设计风格定义', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '设计组', '制定review流程', '标准化review流程有助于往后活动设计', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '设计组', '设计宣传品', 'LOGO/海报/工作证/手册模板/T恤, 出草稿并且试验review流程，logo需早日定稿', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '设计组', '工作证印刷', '工作证印刷', new Date(2018, 9, 1), new Date(2018, 9, 30) ],
+	  [ '设计组', '海报送印', '完成海报印刷并分发给渠道组张贴', new Date(2019, 0, 1), new Date(2019, 0, 15) ],
+	  [ '设计组', '观众手册印刷', '与节目组、赞助组收集信息，完稿，送印', new Date(2019, 0, 1), new Date(2019, 0, 18) ],
+      [ '网站组', '网站需求', '确认网站需求；设计网站mock', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '网站组', '收集往年信息', '收集往年信息并整合', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '网站组', '开始搭建网站', '开始搭建网站', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '渠道组', '梳理社交媒体账号', '梳理 social media 账号；确认可以做的事情；确认 follow up& record的方式', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '渠道组', '确认载歌在谷大使', '整理各公司载歌在谷大使名单；开始联系，并且确认每个公司能做的事情；', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '渠道组', '邮件模板', '邮件模板', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '渠道组', '追踪媒体合作', 'tracking 媒体合作、大使卖票情况', new Date(2018, 11, 1), new Date(2019, 1, 2) ],
+	  [ '渠道组', '海报张贴', '取得设计组海报并分配张贴', new Date(2019, 0, 1), new Date(2019, 0, 15) ],
+	  [ '文案组', '文案培训', '文案培训', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '文案组', 'brainstorming', 'brainstorming', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '文案组', '征集节目&主持人', '出节目征求及主持人征求文案', new Date(2018, 8, 18), new Date(2018, 8, 30) ],
+	  [ '文案组', '评审规则', '出评审规则文案', new Date(2018, 10, 1), new Date(2018, 10, 1) ],
+	  [ '文案组', '海选结束update', '出海选结束update文案', new Date(2018, 10, 1), new Date(2018, 10, 15) ],
+	  [ '文案组', '*赞助商文章', '与赞助组配合出文案', new Date(2018, 10, 1), new Date(2019, 1, 2) ],
+	  [ '文案组', '卖票文章', '出卖票文案', new Date(2018, 11, 1), new Date(2018, 11, 31) ],
+go	  [ '文案组', '游园会征集', '出游园会征集贤士文案', new Date(2018, 10, 1), new Date(2018, 10, 15) ],
+	  [ '文案组', '追踪买票进度', 'tracking 文案卖票情况', new Date(2018, 11, 1), new Date(2018, 11, 31) ],
+	  [ '文案组', '游园会', '出游园会介绍文案', new Date(2019, 0, 1), new Date(2019, 0, 31) ],
+	  [ '文案组', '春晚&游园会攻略', '出春晚&游园会攻略文案', new Date(2019, 0, 1), new Date(2019, 0, 31) ],
+	  [ '文案组', '回顾文章', '出回顾文章', new Date(2019, 1, 3), new Date(2019, 1, 15) ],
+	  [ '摄制组', '宣传片拍摄计划', '确定主题与具体情节 招募演员与确认器材', new Date(2018, 8, 30), new Date(2018, 8, 30) ],
+	  [ '摄制组', '宣传片拍摄', '开始进行拍摄', new Date(2018, 10, 1), new Date(2018, 10, 30) ],
+	  [ '摄制组', '拜年及暖场视频', '拍摄拜年视频；开场视频彩排花絮等', new Date(2019, 0, 1), new Date(2019, 0, 31) ],
+	  [ '摄制组', '活动当天摄影', '收集素材并于活动后剪辑视频等后期工作', new Date(2019, 1, 2), new Date(2019, 1, 15) ],
+    ]);
+
+    chart.draw(dataTable);
+    }
+  </script>
+  </head>
+  <body>
+    <div id="haha" style="width: 1800px; height: 800px;"></div>
+  </body>
+</html>
